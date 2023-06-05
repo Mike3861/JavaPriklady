@@ -1,9 +1,7 @@
 package game;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
 
 public class MyAnimationn extends JPanel implements Runnable {
     private int x = 0;
@@ -43,7 +41,7 @@ public class MyAnimationn extends JPanel implements Runnable {
         JFrame frame = new JFrame("My Animation");
         MyAnimationn animation = new MyAnimationn();
         frame.add(animation);
-        frame.setSize(300, 300);
+        frame.setSize(400, 400);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Thread t = new Thread(animation);

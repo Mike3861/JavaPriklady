@@ -10,30 +10,25 @@
 //        s alebo q
 //        pričom písmeno s od používateľa bude žiadať zadanie strán a, b. Po zadaní týchto strán vypočíta obvod a obsah obdlžnika a zobrazí ho do konzoly. Toto bude opakovať dovtedy, kým v menu nezadáme písmeno q. Po zadaní písmena q, program ukončí svoju činnosť a vypíše Koniec programu.
 
-        package obdlznik;
+package obdlznik;
 
 import obdlznik.Obsah.obdlznikobsah;
 import obdlznik.Obvod.obdlznikobvod;
-
-
 import java.util.Scanner;
-
 public class VypObdl {
-
-    public static int obsah(int A, int B){
-        return A * B;
-    }
-    public static int obvod(int A, int B){
-        return 2*(A+B);
-    }
-
-
     public static void main(String[] args) {
-        String esteRaz = "s";
+        String esteRaz = "";
         Scanner znova = new Scanner(System.in);
 
-            while (esteRaz.equalsIgnoreCase("s")) {
+        while (true) {
+            System.out.println("ak ches spustit program zadaj: s-ano/q-nie");
+            esteRaz = znova.nextLine();
 
+            if (esteRaz.equalsIgnoreCase("q")) {
+                System.out.println("koniec programu ");
+                break;
+            }
+            else if (esteRaz.equalsIgnoreCase("s")) {
                 Scanner zadanieA = new Scanner(System.in);
                 System.out.println("Zadaj hodnotu A:");
                 int A = zadanieA.nextInt();
@@ -42,18 +37,16 @@ public class VypObdl {
                 System.out.println("Zadaj hodnotu B:");
                 int B = zadanieB.nextInt();
 
-                System.out.println("obsah obdlznika je: " + obsah(A, B));
-                System.out.println("obvod obdlznika je: " + obvod(A, B));
-//            obdlznikobsah.vypis();
-//            obdlznikobvod.vypis();
+                System.out.println("obsah obdlznika je: " + obdlznikobsah.obsah(A, B));
+                System.out.println("obvod obdlznika je: " + obdlznikobvod.obvod(A, B));
 
-
-                System.out.println("chces zadat dalsie cislo ? s/q");
-                esteRaz = znova.next();
+            } else {
+                System.out.println("zadal si nespravnu klavesu");
 
             }
 
 
-        System.out.println("Koniec programu.");
+        }
+
     }
 }
