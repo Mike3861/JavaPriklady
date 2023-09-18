@@ -9,7 +9,7 @@ public class FizzBuzz {
         String vstupneHodnoty = scn.nextLine();
         System.out.println("zadane hodnoty su: " + vstupneHodnoty);
 
-        String[] poleHodnot = vstupneHodnoty.split(" ");
+        String[] poleHodnot = vstupneHodnoty.split("");
 
 
         for (int i = 0; i < poleHodnot.length; i++) {
